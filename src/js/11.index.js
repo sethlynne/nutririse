@@ -3,7 +3,7 @@ var mainNav = document.getElementById("nav");
 
 window.onscroll = function() {
   "use strict";
-  if (document.body.scrollTop >= 30 || document.documentElement.scrollTop >= 30) {
+  if (document.body.scrollTop >= 1 || document.documentElement.scrollTop >= 1) {
     mainNav.classList.add("nav-scroll");
   } else {
     mainNav.classList.remove("nav-scroll");

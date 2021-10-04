@@ -4,20 +4,20 @@
 
 // Colors //
 $theme-colors: (
-  "primary": #F38B71,
-  "orange": #F79C36,
-  "coral": #F38B71,
-  "teal": #70CEC2,
-  "navy": #182950,
-  "dark": #1a1b1c,
+  "primary": #87CEBA,
+  "coral": #F27160,
+  "sky": #89DDEF,
+  "peach": #F6d88D,
+  "dark": #232323,
 );
 
-$primary: #F38B71;
-$orange: #F79C36;
-$coral: #F38B71;
-$teal: #70CEC2;
-$navy: #182950;
-$dark: #1a1b1c;
+$primary: #87CEBA;
+$coral: #F27160;
+$sky: #89DDEF;
+$peach: #F6d88D;
+$peach-light: #FDF7F2;
+$orange: #F8B272;
+$dark: #232323;
 $white: #FFFFFF;
 $letter-spacing: 2px;
 $transition: all 0.2s ease;
@@ -27,13 +27,9 @@ $bg-light-teal: #F1FAF9;
 $bg-light-yellow: #FFFDE7;
 
 // Fonts //
-$serif-demi-bold: "Argent CF Demi Bold", "Times New Roman", "Times", serif;
-$serif: "Argent CF", "Times New Roman", "Times", serif;
-$sans-serif-demi-bold: "Avenir Next Demi Bold", "Helvetica", "Arial", sans-serif;
-$sans-serif: "Avenir Next", "Helvetica", "Arial", sans-serif;
-
-
-
+$serif-bold: "Gazpacho Bold", "Times New Roman", "Times", serif;
+$sans-serif-bold: "Brandon Text Bold", "Helvetica", "Arial", sans-serif;
+$sans-serif: "Brandon Text", "Helvetica", "Arial", sans-serif;
 
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "fonts.scss";
@@ -49,7 +45,7 @@ $sans-serif: "Avenir Next", "Helvetica", "Arial", sans-serif;
 // Global //
 //================//
 body {
-  font-family: "Avenir Next", "Helvetica", "Arial", sans-serif;
+  font-family: $sans-serif;
   font-size: 0.9rem;
   @include media-breakpoint-up(md) {
       font-size: 1rem;
@@ -91,7 +87,7 @@ hr.hr-lg {
     text-transform: uppercase;
     letter-spacing: $letter-spacing;
     font-size: .7rem;
-    font-family: $sans-serif-demi-bold;
+    font-family: $sans-serif-bold;
   }
   &__menu {
     text-align: left;
@@ -199,7 +195,7 @@ hr.hr-lg {
   text-transform: uppercase;
   font-size: .8rem;
   letter-spacing: $letter-spacing;
-  font-family: $sans-serif-demi-bold;
+  font-family: $sans-serif-bold;
   position: relative;
   display: inline-block;
   padding-bottom: 0px;
@@ -432,20 +428,8 @@ img:not([src]) {
   }
 }
 
-.bg-light-orange {
-  background: $bg-light-orange;
-}
-
-.bg-light-coral {
-  background: $bg-light-coral;
-}
-
-.bg-light-teal {
-  background: $bg-light-teal;
-}
-
-.bg-light-yellow {
-  background: $bg-light-yellow;
+.bg-light-peach {
+  background: $peach-light;
 }
 
 
@@ -467,7 +451,7 @@ form {
     font-size: .7rem;
     text-transform: uppercase;
     letter-spacing: $letter-spacing;
-    font-family: $sans-serif-demi-bold;
+    font-family: $sans-serif-bold;
     .inline-link {
       font-size: .7rem;
     }
@@ -530,7 +514,7 @@ form {
     position: relative;
     .quote {
       font-size: 1rem;
-      font-family: $serif;
+      font-family: $serif-bold;
       @include media-breakpoint-up(lg) {
           font-size: 1.2rem;
       }
@@ -637,7 +621,7 @@ form {
   }
   &__percent {
     font-size: 2.5rem;
-    font-family: $serif-demi-bold;
+    font-family: $serif-bold;
     line-height: 3rem;
   }
   &__label {
@@ -675,7 +659,7 @@ form {
   padding: 20px 0 0 0;
   &__number {
     font-size: 3rem;
-    font-family: $serif-demi-bold;
+    font-family: $serif-bold;
     color: $teal;
     line-height: 3rem;
     padding: 0px 25px 50px 0px;
@@ -699,13 +683,13 @@ form {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $serif-demi-bold;
+  font-family: $serif-bold;
 }
 
 .caption {
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
-  font-family: $sans-serif-demi-bold;
+  font-family: $sans-serif-bold;
   font-size: .65rem;
   margin-bottom: 10px;
   span {
@@ -871,73 +855,53 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
-
 //================//
 // Navbar //
 //================//
 
 .navbar {
   transition: $transition;
+  top: 30px;
 }
 
 .navbar-top {
-  background: $dark;
+  background: $peach-light;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
   height: 30px;
   top: 0px;
-  color: $white;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+  color: $orange;
   font-size: .60rem;
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
   @include media-breakpoint-up(lg) {
     font-size: .67rem;
   }
-  .middle-col {
-    text-align: left;
-    @include media-breakpoint-up(md) {
-      text-align: center;
-    }
-  }
   a {
-    color: $white;
-    opacity: .75;
+    color: $orange;
     transition: $transition;
     text-decoration: none;
     &:hover {
-      color: $teal;
-    }
-  }
-  .medical-license-link {
-    &:hover {
-      color: $teal;
-    }
-  }
-  .phone {
-    opacity: .75;
-  }
-  .social {
-    a {
-      text-decoration: none;
-
-      font-size: 1rem;
-      padding-right: 10px;
-
+      color: lighten($orange, 50%);;
     }
   }
 }
 
 .nav-scroll {
-  background-color: rgba(0,0,0,.5);
+  transition: $transition;
+  background-color: rgba(255,255,255,.8);
   backdrop-filter: blur(10px);
   top: 0;
 }
 
 .navbar-brand {
   &__img {
-    width: 200px;
+    width: 150px;
   }
 }
 
@@ -945,25 +909,27 @@ h1, h2, h3, h4, h5, h6 {
   font-size: .7rem;
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
-  font-family: $sans-serif-demi-bold;
+  font-family: $sans-serif-bold;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-  color: $white;
+.navbar--light .navbar-nav .nav-link {
+  color: $dark;
   &:hover {
-    color: $coral;
+    color: $primary;
   }
   &.active {
-    color: $coral;
+    color: $primary;
   }
 }
 
 .navbar {
   display: flex !important;
-    flex-basis: auto;
+  flex-basis: auto;
+  &.navbar--light {
+    background: $white;
+  }
   .btn {
-    font-size: 0.70rem;
-    font-family: "Avenir Next Demi";
+    font-family: $sans-serif-bold;
   }
 }
 
@@ -1084,8 +1050,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .drawer-toggler {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   display: inline-block;
     width: 2rem;
     height: 2rem;
@@ -1112,7 +1077,7 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     letter-spacing: $letter-spacing;
     font-size: .70rem;
-    font-family: $sans-serif-demi-bold;
+    font-family: $sans-serif-bold;
     text-decoration: none;
     color: $white;
     border-right: 1px solid $white;
@@ -1129,13 +1094,30 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+
 //================//
 // Hero //
 //================//
 .hero {
   position: relative;
   z-index: 2;
-  padding-top: 50px;
+  padding-top: 110px;
+  .hero__list {
+    padding: 0px;
+    margin: 0;
+    li {
+      list-style: none;
+    }
+    li::before {
+      content: '';
+      display: inline-block;
+      height: 20px;
+      width: 35px;
+      background: url('../img/icon-check.png') center bottom no-repeat;
+      background-size: 17px;
+      padding-right: 10px;
+    }
+  }
   &--tall {
     height: 75vh;
   }
@@ -1143,7 +1125,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 50vh;
   }
   &--home {
-    background: $dark;
+    background: url("../img/hero-ash.jpg") center center/cover no-repeat;
   }
   &--gallery {
     background: url("../img/hero-gallery.jpg") center center/cover no-repeat;
@@ -1189,11 +1171,11 @@ h1, h2, h3, h4, h5, h6 {
 // Buttons //
 //================//
 .btn {
-  border-radius: 0;
+  border-radius: 5px;
   color: $white;
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
-  font-family: "Avenir Next Demi";
+  font-family: $sans-serif-bold;
   padding: .6rem .80rem;
   font-size: .8rem;
   &:hover, &:focus, &:visited {
