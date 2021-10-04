@@ -1,7 +1,7 @@
 
-# Rythmia.com
+# NutriRise.com V2
 
-The Residences at Rythmia
+NutriRise
 
 # How It Works
 
