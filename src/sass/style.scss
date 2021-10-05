@@ -684,6 +684,7 @@ form {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $serif-bold;
+  margin-bottom: 1rem;
 }
 
 .caption {
@@ -1125,43 +1126,36 @@ h1, h2, h3, h4, h5, h6 {
     height: 50vh;
   }
   &--home {
-    background: url("../img/hero-ash.jpg") center center/cover no-repeat;
-  }
-  &--gallery {
-    background: url("../img/hero-gallery.jpg") center center/cover no-repeat;
-  }
-  &--resort {
-    background: url("../img/hero-resort.jpg") center center/cover no-repeat;
-  }
-  &--our-story {
-    background: url("../img/hero-our-story.jpg") center center/cover no-repeat;
-  }
-  &--scholarship {
-    background: url("../img/hero-scholarship.jpg") center center/cover no-repeat;
-  }
-  &--testimonials {
-    background: url("../img/hero-testimonials.jpg") center center/cover no-repeat;
-  }
-  &--gs {
-    background: url("../img/hero-gs.jpg") center center/cover no-repeat;
-  }
-  &--rp {
-    background: url("../img/hero-rp.jpg") center center/cover no-repeat;
-  }
-  &--gap {
-    background: url("../img/hero-gap.jpg") center center/cover no-repeat;
-  }
-  &--contact {
-    background: url("../img/hero-contact.jpg") center center/cover no-repeat;
-  }
-  &__texture {
-    width: 100%;
-    height: 20px;
-    background: url('../img/hero-texture.png') 0 0 repeat-x;
-    margin-bottom: -10px;
-  }
-  &__divider {
-    padding: 50px;
+    background: #9FD8C8 url("../img/hero-ash-mobile.jpg") center bottom/contain no-repeat;
+    padding-bottom: 250px;
+    background-size: 110%;
+    height: 70vh !important;
+    h1 {
+      font-size: 3rem;
+    }
+    @include media-breakpoint-up(sm) {
+      h1 {
+        font-size: 3rem;
+      }
+      height: 50vh !important;
+      background: #9FD8C8 url("../img/hero-ash-web.jpg") 25px bottom/contain no-repeat;
+      padding-bottom: 300px;
+      background-size: 125%;
+
+    }
+    @include media-breakpoint-up(md) {
+      background: #9FD8C8 url("../img/hero-ash-web.jpg") center bottom/contain no-repeat;
+      padding-bottom: 0px;
+      background-position: 100px bottom;
+      h1 {
+        font-size: 3rem;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+
+      padding-bottom: 0px;
+      background-position: center bottom;
+    }
   }
 }
 
@@ -1222,20 +1216,6 @@ h1, h2, h3, h4, h5, h6 {
 .btn-coral {
   border-color: $coral;
   background-color: $coral;
-}
-
-.btn-coral-stroke {
-  border-color: $coral;
-  background-color: none;
-  color: $coral;
-  &:hover {
-    color: $white !important;
-    background: $coral;
-  }
-  &:visited, &:focus {
-    color: $coral;
-    background-color: none;
-  }
 }
 
 .btn-yellow {
